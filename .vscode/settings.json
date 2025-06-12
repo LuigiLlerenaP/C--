@@ -58,7 +58,8 @@
         "optional": "cpp",
         "iomanip": "cpp",
         "*.md": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "*.tpp": "cpp"
     },
     "cSpell.words": [
         "fibonacci",
