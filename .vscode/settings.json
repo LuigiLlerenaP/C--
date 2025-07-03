@@ -62,8 +62,16 @@
         "*.tpp": "cpp"
     },
     "cSpell.words": [
+        "Caracter",
+        "codigo",
+        "creacion",
         "fibonacci",
-        "PERSONANACIDA"
+        "opcion",
+        "PERSONANACIDA",
+        "posicion",
+        "Posicion",
+        "Transformacion",
+        "vacio"
     ],
     "C_Cpp.errorSquiggles": "disabled"
 }
