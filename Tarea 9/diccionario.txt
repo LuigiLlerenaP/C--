@@ -1,0 +1,5 @@
+4
+PALABRA:1:luigi
+SIGNIFICADO:3:mi nombre
+SIGNIFICADO:2:mi nombre
+FIN_PALABRA
