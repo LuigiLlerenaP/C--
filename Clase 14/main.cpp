@@ -10,41 +10,36 @@ void Insertar(node *&pRaiz, int Valor);
 void DesplegarArbol_EnOrden(node *&pRaiz);
 void DesplegarArbol_PreOrden(node *&pRaiz);
 void DesplegarArbol_PostOrden(node *&pRaiz);
-
+void LeerDesdeTeclado(node *&pRaiz);
 int main()
 {
-    // Mensaje Consola
-    std::cout << "Arboles\n";
-    // Declaración de variables
     node *pRaiz = NULL;
-    node *pNodeX = NULL;
-    // Inicialización del árbol
-    pRaiz = new node;
-    pRaiz->data = 7;
-    pRaiz->izq = new node;
-    pRaiz->der = new node;
-    // Inicialización de los nodos hijos
-    pNodeX = pRaiz->izq;
-    pNodeX->data = 1;
-    pNodeX->izq = NULL;
-    pNodeX->der = NULL;
-    pNodeX = pRaiz->der;
-    pNodeX->data = 14;
-    pNodeX->izq = NULL;
-    pNodeX->der = NULL;
-    // Inicialización
-    pRaiz = NULL;
-    int Valores[11] = {3, 8, 5, 11, 22, 17, 4, 15, 21, 14, 18};
-    for (int i = 0; i < 11; i++)
-    {
-        Insertar(pRaiz, Valores[i]);
-    };
+    cout << "Arbol Binario de Busqueda\n";
+    LeerDesdeTeclado(pRaiz);
+
     cout << "En orden:\n";
     DesplegarArbol_EnOrden(pRaiz);
     cout << "Pre Orden:\n";
     DesplegarArbol_PreOrden(pRaiz);
     cout << "Post Orden:\n";
     DesplegarArbol_PostOrden(pRaiz);
+}
+
+void LeerDesdeTeclado(node *&pRaiz)
+{
+    int valor;
+    cout << "Ingrese numeros para insertar en el arbol (0 para terminar):\n";
+
+    while (true)
+    {
+        cout << "Valor: ";
+        cin >> valor;
+
+        if (valor == 0)
+            break;
+
+        Insertar(pRaiz, valor);
+    }
 }
 
 void Insertar(node *&pRaiz, int Valor)
@@ -112,4 +107,12 @@ void DesplegarArbol_PostOrden(node *&pRaiz)
         cout << pRaiz->data << "\n";
         DesplegarArbol_PostOrden(pRaiz->izq);
     }
+}
+
+void ImprimirNodoConEspacios(int data, int espacio, int nivel)
+{
+    cout << endl;
+    for (int i = nivel; i < espacio; i++)
+        cout << " ";
+    cout << data << "\n";
 }
